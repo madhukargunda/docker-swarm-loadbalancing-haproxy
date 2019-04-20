@@ -1,0 +1,16 @@
+
+
+version: '3.1'
+
+services:
+  loadbalancer:
+    image: haproxy
+    container_name: lb
+    ports:
+      - 80:80
+      - 8404:8404
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+
+
+
